@@ -14,7 +14,7 @@ func main() {
 	}
 
 	http.HandleFunc("/", baseHandler)
-	http.Handle("/limit", limiter.New())
+	http.Handle("/limit", limiter.Init())
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
